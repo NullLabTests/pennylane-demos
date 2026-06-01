@@ -1,6 +1,7 @@
 _build
 __pycache__
 tutorial
+experiments/results/
 _static/thumbs/*
 .idea
 demos/*

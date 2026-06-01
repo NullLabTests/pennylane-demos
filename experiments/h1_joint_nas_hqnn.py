@@ -9,13 +9,24 @@ that simultaneously maximize accuracy and minimize computational cost (FLOPs).
 Reference: arXiv:2605.25768, arXiv:2511.10062, arXiv:2402.10540
 
 Baseline: demonstrations_v2/tutorial_variational_classifier/demo.py
+
+Usage:
+    python experiments/h1_joint_nas_hqnn.py [--n-samples 100] [--n-epochs 10]
 """
+
+import argparse
+import itertools
+import json
+import os
+import sys
+import time
+from datetime import datetime
 
 import pennylane as qp
 from pennylane import numpy as np
-import itertools
-import time
-import json
+from sklearn.datasets import make_moons
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 # ---------------------------------------------------------------------------
 # Search space
@@ -101,12 +112,21 @@ def train_and_eval(circuit, weight_shape, X_train, y_train, X_test, y_test):
     return acc
 
 
+def parse_args():
+    parser = argparse.ArgumentParser(description="H1: Joint Classical–Quantum NAS")
+    parser.add_argument("--n-samples", type=int, default=100, help="Number of samples")
+    parser.add_argument("--n-epochs", type=int, default=10, help="Training epochs per architecture")
+    parser.add_argument("--output-dir", type=str, default="experiments/results", help="Output directory")
+    return parser.parse_args()
+
+
 def main():
+    args = parse_args()
     print("=" * 72)
     print("H1: Joint Classical–Quantum NAS for Pareto-Optimal HQNNs")
     print("=" * 72)
 
-    X, y = load_data(n_samples=100)
+    X, y = load_data(n_samples=args.n_samples)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
     results = []
@@ -156,9 +176,12 @@ def main():
         "pareto_front": pareto,
         "all_results": results,
     }
-    with open("h1_results.json", "w") as f:
+    os.makedirs(args.output_dir, exist_ok=True)
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    out_path = os.path.join(args.output_dir, f"h1_results_{ts}.json")
+    with open(out_path, "w") as f:
         json.dump(summary, f, indent=2)
-    print(f"\nResults saved to h1_results.json ({len(results)} architectures)")
+    print(f"\nResults saved to {out_path} ({len(results)} architectures)")
 
 
 if __name__ == "__main__":
