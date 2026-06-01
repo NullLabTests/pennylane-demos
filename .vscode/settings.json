@@ -3,5 +3,6 @@
         ".venv/**",
         ".venv-build/**",
         "_build/**"
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }
