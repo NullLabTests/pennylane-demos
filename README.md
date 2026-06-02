@@ -41,6 +41,13 @@
 
 <br/>
 
+<p align="center">
+  <img src="documentation/images/agent_fork_overview.svg" alt="Fork Architecture Diagram" width="90%">
+</p>
+<p align="center"><sub>Fork architecture showing upstream origin, added experiments, and mapping of each hypothesis to its PennyLane baseline demo. Each experiment extends a specific tutorial.</sub></p>
+
+<br/>
+
 ---
 
 ## 🌐 Ecosystem Overview
@@ -231,6 +238,13 @@ flowchart LR
     style D fill:#1a1a2e,stroke:#7C3AED,color:#fff,stroke-width:3
     style E fill:#1a1a2e,stroke:#10B981,color:#fff,stroke-width:2
 ```
+
+<br/>
+
+<p align="center">
+  <img src="documentation/images/data_flow.svg" alt="Cross-Repository Data Flow" width="90%">
+</p>
+<p align="center"><sub>End-to-end data flow: hypotheses.json defines experiment parameters → Python scripts execute with CLI args → timestamped JSON results validate hypotheses. A complete feedback loop across all three repositories.</sub></p>
 
 <br/>
 

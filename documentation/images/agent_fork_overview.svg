@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/><stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="up" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#64748b"/><stop offset="100%" style="stop-color:#475569"/>
+    </linearGradient>
+    <linearGradient id="fork" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED"/><stop offset="100%" style="stop-color:#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="added" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/><stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="h1g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/><stop offset="100%" style="stop-color:#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="h2g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/><stop offset="100%" style="stop-color:#2563EB"/>
+    </linearGradient>
+    <linearGradient id="h3g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444"/><stop offset="100%" style="stop-color:#DC2626"/>
+    </linearGradient>
+    <linearGradient id="h4g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/><stop offset="100%" style="stop-color:#D97706"/>
+    </linearGradient>
+    <linearGradient id="h5g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/><stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/></filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="16" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="18" font-weight="bold">🐍 Fork Architecture &amp; Experiment Mapping</text>
+  <line x1="100" y1="48" x2="700" y2="48" stroke="#334155" stroke-width="1"/>
+
+  <!-- Upstream box -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="70" width="200" height="60" rx="12" fill="url(#up)"/>
+    <text x="160" y="97" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="12" font-weight="bold">🔬 PennyLaneAI/demos</text>
+    <text x="160" y="118" text-anchor="middle" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="9">Upstream: 100+ official demos</text>
+  </g>
+
+  <!-- Fork box -->
+  <g filter="url(#shadow)">
+    <rect x="300" y="70" width="200" height="60" rx="12" fill="url(#fork)"/>
+    <text x="400" y="97" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="12" font-weight="bold">🐍 pennylane-demos</text>
+    <text x="400" y="118" text-anchor="middle" fill="#ddd6fe" font-family="Arial,sans-serif" font-size="9">🔀 This fork ← You are here</text>
+  </g>
+
+  <!-- Arrow upstream → fork -->
+  <line x1="260" y1="100" x2="295" y2="100" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="278" y="93" text-anchor="middle" fill="#475569" font-family="Arial,sans-serif" font-size="8">fork</text>
+
+  <!-- Added experiments box -->
+  <g filter="url(#shadow)">
+    <rect x="540" y="70" width="200" height="60" rx="12" fill="url(#added)"/>
+    <text x="640" y="97" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="12" font-weight="bold">➕ experiments/</text>
+    <text x="640" y="118" text-anchor="middle" fill="#a7f3d0" font-family="Arial,sans-serif" font-size="9">5 agent-generated scripts</text>
+  </g>
+
+  <!-- Arrow fork → added -->
+  <line x1="500" y1="100" x2="535" y2="100" stroke="#475569" stroke-width="2"/>
+  <text x="518" y="93" text-anchor="middle" fill="#475569" font-family="Arial,sans-serif" font-size="8">adds</text>
+
+  <!-- Section divider -->
+  <line x1="50" y1="155" x2="750" y2="155" stroke="#334155" stroke-width="1"/>
+  <text x="400" y="178" text-anchor="middle" fill="#94a3b8" font-family="Arial,sans-serif" font-size="12" font-weight="bold">Experiment ↔ Baseline Demo Mapping</text>
+
+  <!-- H1 -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="200" width="220" height="70" rx="10" fill="url(#h1g)"/>
+    <text x="150" y="225" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="13" font-weight="bold">H1: Joint NAS HQNN</text>
+    <text x="150" y="245" text-anchor="middle" fill="#ddd6fe" font-family="Arial,sans-serif" font-size="9">h1_joint_nas_hqnn.py</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="300" y="205" width="200" height="35" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+    <text x="400" y="227" text-anchor="middle" fill="#94a3b8" font-family="Arial,sans-serif" font-size="9">📖 tutorial_variational_classifier</text>
+  </g>
+  <line x1="260" y1="235" x2="295" y2="223" stroke="#475569" stroke-width="1.5"/>
+  <text x="278" y="215" text-anchor="middle" fill="#475569" font-family="Arial,sans-serif" font-size="8">extends</text>
+
+  <!-- H2 -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="285" width="220" height="70" rx="10" fill="url(#h2g)"/>
+    <text x="150" y="310" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="13" font-weight="bold">H2: Engineered Dissipation</text>
+    <text x="150" y="330" text-anchor="middle" fill="#bfdbfe" font-family="Arial,sans-serif" font-size="9">h2_engineered_dissipation_bp.py</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="300" y="290" width="200" height="35" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+    <text x="400" y="312" text-anchor="middle" fill="#94a3b8" font-family="Arial,sans-serif" font-size="9">📖 tutorial_barren_plateaus</text>
+  </g>
+  <line x1="260" y1="320" x2="295" y2="308" stroke="#475569" stroke-width="1.5"/>
+
+  <!-- H3 -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="370" width="220" height="70" rx="10" fill="url(#h3g)"/>
+    <text x="150" y="395" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="13" font-weight="bold">H3: Post-Variational</text>
+    <text x="150" y="415" text-anchor="middle" fill="#fecaca" font-family="Arial,sans-serif" font-size="9">h3_post_variational_benchmarks.py</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="300" y="375" width="220" height="35" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+    <text x="410" y="397" text-anchor="middle" fill="#94a3b8" font-family="Arial,sans-serif" font-size="9">📖 tutorial_post-variational_qnn</text>
+  </g>
+  <line x1="260" y1="405" x2="295" y2="393" stroke="#475569" stroke-width="1.5"/>
+
+  <!-- Right column: H4, H5 -->
+  <!-- H4 -->
+  <g filter="url(#shadow)">
+    <rect x="560" y="200" width="210" height="70" rx="10" fill="url(#h4g)"/>
+    <text x="665" y="225" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="13" font-weight="bold">H4: PDE-Constrained</text>
+    <text x="665" y="245" text-anchor="middle" fill="#fef9c3" font-family="Arial,sans-serif" font-size="9">h4_pde_constrained_loss.py</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="560" y="285" width="210" height="70" rx="10" fill="url(#h5g)"/>
+    <text x="665" y="310" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="13" font-weight="bold">H5: Data-Reuploading</text>
+    <text x="665" y="330" text-anchor="middle" fill="#a7f3d0" font-family="Arial,sans-serif" font-size="9">h5_data_reuploading_scaling.py</text>
+  </g>
+
+  <!-- Baseline links for H4, H5 -->
+  <g filter="url(#shadow)">
+    <rect x="540" y="370" width="120" height="35" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+    <text x="600" y="392" text-anchor="middle" fill="#94a3b8" font-family="Arial,sans-serif" font-size="8">📖 tutorial_barren_plateaus</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="680" y="370" width="100" height="35" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+    <text x="730" y="392" text-anchor="middle" fill="#94a3b8" font-family="Arial,sans-serif" font-size="8">📖 tutorial_data_reuploading</text>
+  </g>
+  <line x1="665" y1="270" x2="600" y2="365" stroke="#475569" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="665" y1="355" x2="730" y2="365" stroke="#475569" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Bottom legend -->
+  <line x1="50" y1="435" x2="750" y2="435" stroke="#334155" stroke-width="1"/>
+  <text x="400" y="458" text-anchor="middle" fill="#94a3b8" font-family="Arial,sans-serif" font-size="11" font-weight="bold">Code Quality Features</text>
+
+  <text x="80" y="480" fill="#64748b" font-family="Arial,sans-serif" font-size="9">✅ CLI argument parsing (--help)</text>
+  <text x="300" y="480" fill="#64748b" font-family="Arial,sans-serif" font-size="9">✅ Timestamped JSON results</text>
+  <text x="530" y="480" fill="#64748b" font-family="Arial,sans-serif" font-size="9">✅ Reproducible random seeds</text>
+  <text x="80" y="495" fill="#64748b" font-family="Arial,sans-serif" font-size="9">✅ Error handling per architecture</text>
+  <text x="300" y="495" fill="#64748b" font-family="Arial,sans-serif" font-size="9">✅ Results saved to experiments/results/</text>
+  <text x="530" y="495" fill="#64748b" font-family="Arial,sans-serif" font-size="9">✅ Self-contained (minimal deps)</text>
+</svg>
